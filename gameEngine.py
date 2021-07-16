@@ -4,18 +4,14 @@ import utils.gameEngineFunctions as engine
 
 
 def main():
-
     SIZE, word = engine.getWord()
     run = True
     tries = 5
     lettersGuessed = []
-
     print(f"The word has {SIZE} letters \nGood Luck!\n")
 
     while run:
-        
-
-
+    
         isGameEnded, message = engine.isGameEnded(lettersGuessed, word, tries)
 
         if isGameEnded:
@@ -24,7 +20,6 @@ def main():
                 run = False
                 break
             
-
         try:
             guess = input("Guess a letter: ")
             isFound, letters =   engine.isLetterFound(guess, word)
@@ -41,13 +36,10 @@ def main():
                 print(f"\nYou have {tries} tries left")
 
             print(engine.renderGuesses(lettersGuessed, word))
+
         except TypeError:
             run = False
         engine.renderMan(tries)
-        
-
-
-
         
     print("Game has ended")
 
