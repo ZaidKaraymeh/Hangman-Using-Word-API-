@@ -40,7 +40,7 @@ def main():
         except TypeError:
             run = False
         engine.renderMan(tries)
-        
+    print(f"The word was {''.join(word)}")
     print("Game has ended")
 
 
